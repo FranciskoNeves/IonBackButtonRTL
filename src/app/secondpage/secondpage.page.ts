@@ -7,16 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondpagePage implements OnInit {
 
-  public language : string = '';
+  public language : string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    document.documentElement.dir = document.documentElement.dir != ''? document.documentElement.dir : 'ltr';
     this.language = document.documentElement.dir
   }
 
+  ngOnInit() {
+  }
+
   changeLanguage(){
-    document.documentElement.dir === 'ltr'? document.documentElement.dir = "rtl" : document.documentElement.dir = "ltr";
+    document.documentElement.dir = document.documentElement.dir == 'ltr'? "rtl" : "ltr";
+    this.language = document.documentElement.dir
   }
 
 }

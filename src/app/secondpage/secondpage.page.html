@@ -9,8 +9,21 @@
 
 <ion-content>
 
-  <div id="container">
+   <div id="container">
     <ion-button (click)="changeLanguage()">{{language}}</ion-button>
   </div>
+
+  <ion-item-sliding #slidingItem disabled="true">
+    <ion-item (click)="slidingItem.open('end')">
+      Slide
+    </ion-item>
+
+    <ion-item-options #options (click)="slidingItem.close()">
+      <ion-button>
+        <ion-icon name="call"></ion-icon>
+      </ion-button>
+    </ion-item-options>
+      
+  </ion-item-sliding>
 
 </ion-content>
