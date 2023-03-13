@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  pickerDate: string;
-  maxMonthYear: string;
+  constructor(public router: Router) {
 
-  constructor() {
-    this.pickerDate = '2023-01-01';
-    this.maxMonthYear = '2028-01-01';
   }
 
-  dateChanged(event: any) {
-    this.pickerDate = event.detail.value.toString();
+  gotoPage(){
+    this.router.navigateByUrl('secondpage')
   };
 
 }
